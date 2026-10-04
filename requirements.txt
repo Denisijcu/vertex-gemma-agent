@@ -1,0 +1,28 @@
+# Servidor local y APIs
+fastapi==0.110.0
+uvicorn==0.27.1
+pydantic>=2.10.0
+requests==2.31.0
+openai==1.13.3
+
+# Entorno de simulación Docker
+docker==7.0.0
+
+# Base de datos vectorial (Mock de Kaggle)
+chromadb==0.4.24
+sentence-transformers==2.5.1
+
+# Procesamiento de grafos y datos
+networkx==3.2.1
+numpy==1.26.4
+pandas==2.2.1
+pydantic>=2.10.0
+
+# Motor de IA y modelos locales
+torch>=2.2.0
+transformers>=4.40.0
+accelerate>=0.28.0
+peft>=0.10.0
+bitsandbytes>=0.43.0
+safetensors>=0.4.2
+huggingface-hub>=0.22.0

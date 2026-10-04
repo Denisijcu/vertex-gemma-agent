@@ -1,0 +1,203 @@
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+.env
+.env.*
+!.env.example
+
+venv/
+.venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ============================================================
+# Jupyter / Notebooks
+# ============================================================
+
+.ipynb_checkpoints/
+
+# ============================================================
+# Data / Datasets / Vectors
+# ============================================================
+
+data/raw/*
+data/processed/*
+data/chroma_harness/*
+data/cache/*
+data/tmp/*
+!data/.keep
+
+*.csv
+*.parquet
+*.arrow
+*.feather
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+
+# ============================================================
+# Machine Learning / Training
+# ============================================================
+
+# Model weights
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+*.h5
+*.hdf5
+*.gguf
+*.ggml
+
+# Transformers / PEFT checkpoints
+checkpoint-*/
+checkpoints/
+runs/
+wandb/
+mlruns/
+
+# TensorBoard
+tensorboard/
+events.out.tfevents.*
+
+# Hugging Face cache
+.cache/
+huggingface_cache/
+hf_cache/
+
+# Transformers downloaded models
+models/
+model/
+weights/
+pretrained/
+merged/
+merged_model/
+
+# LoRA / QLoRA outputs
+lora/
+lora_output/
+lora_outputs/
+adapters/
+adapter/
+submission/adapters/
+
+# ============================================================
+# Training / Evaluation Outputs
+# ============================================================
+
+evaluations/
+evaluation/
+eval/
+results/
+outputs/
+training_outputs/
+training_output/
+
+# ============================================================
+# Kaggle
+# ============================================================
+
+submission.zip
+submission.parquet
+kaggle_output/
+kaggle_outputs/
+
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+logs/
+*.jsonl
+
+# ============================================================
+# Temporary / Generated Files
+# ============================================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ============================================================
+# Build / Distribution
+# ============================================================
+
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ============================================================
+# IDE
+# ============================================================
+
+.vscode/
+.idea/
+*.code-workspace
+
+# ============================================================
+# OS
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Docker
+# ============================================================
+
+docker-data/
+docker-volumes/
+
+# ============================================================
+# Local development
+# ============================================================
+
+.local/
+.local_env/
+sandbox/
+workspace/
+
+# ============================================================
+# Large archives
+# ============================================================
+
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.xz
+
+# ============================================================
+# Local tests containing private credentials
+# ============================================================
+
+tests/compare_base_vs_vertex.py
+tests/test_local.py
+tests/test_vertex_core.py
+tests/verify_lora.py

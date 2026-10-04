@@ -1,0 +1,7 @@
+rules:
+  - id: vertex-sql-injection
+    languages:
+      - python
+    message: "Potential SQL injection: SQL query contains interpolated username/password."
+    severity: ERROR
+    pattern-regex: "WHERE username = '\\{username\\}' AND password = '\\{password\\}'"

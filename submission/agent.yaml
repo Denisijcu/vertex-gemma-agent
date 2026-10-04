@@ -1,0 +1,12 @@
+name: "VIC-Gemma-Orchestrator"
+description: "Main reasoning node. Evaluates issues and orchestrates patches."
+model: "gemma-4-31b-it-qat-w4a16-ct"
+adapter: "main_lora"
+system_prompt: !include prompts/system.md
+eval_config:
+  max_time_seconds: 43200
+tools:
+  - submit_patch
+sub_agents:
+  - !include sub_agents/explorer_agent.yaml
+  - !include sub_agents/mutator_agent.yaml

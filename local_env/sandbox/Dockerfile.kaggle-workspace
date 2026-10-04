@@ -1,0 +1,36 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Instalación de herramientas base + runtime Python para ejecutar tests del repo
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    bash \
+    tree \
+    jq \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -s /usr/bin/python3 /usr/local/bin/python
+
+# Creación de usuario no privilegiado (OWASP)
+RUN groupadd -g 1337 kaggle_group && \
+    useradd -u 1337 -g kaggle_group -s /bin/bash -d /home/kaggle_user -m kaggle_user
+
+WORKDIR /workspace
+RUN chown -R kaggle_user:kaggle_group /workspace && \
+    chmod 700 /workspace
+
+# Git seguro dentro del contenedor
+RUN git config --system user.name "Gemma4 Agent" && \
+    git config --system user.email "agent@vertexcoders.local" && \
+    git config --system safe.directory /workspace
+
+USER kaggle_user:kaggle_group
+
+# Mantiene el contenedor vivo para que el Gateway pueda hacer exec_run
+CMD ["tail", "-f", "/dev/null"]

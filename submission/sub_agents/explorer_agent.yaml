@@ -1,0 +1,11 @@
+name: "Graph-Explorer-Agent"
+description: "RAG and AST navigation specialist. Read-only agency."
+model: "gemma-4-31b-it-qat-w4a16-ct"
+adapter: "tool_lora"
+system_prompt: !include prompts/explorer.md
+tools:
+  - run_command
+  - read_file
+  - get_code_neighbors
+  - search_similar_code
+  - get_code_subgraph
